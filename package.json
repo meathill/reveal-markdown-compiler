@@ -1,0 +1,28 @@
+{
+  "name": "reveal-markdown-compiler",
+  "version": "1.0.0",
+  "description": "a compiler convert markdown to reveal.js slide",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meathill/reveal-markdown-compiler.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meathill/reveal-markdown-compiler/issues"
+  },
+  "homepage": "https://github.com/meathill/reveal-markdown-compiler#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "lodash": "latest",
+    "marked": "^0.3.6"
+  }
+}
