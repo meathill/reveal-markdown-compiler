@@ -4,8 +4,6 @@
 
 const fs = require('fs');
 
-let exports = module.exports = {};
-
 exports.readFile = (path, options) => {
   return new Promise(resolve => {
     fs.readFile(path, options, (err, content) => {

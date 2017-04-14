@@ -26,7 +26,7 @@ const PATH_REG = /\.\/node_modules\/([\w.\-]+)\//g;
  *    @param {Object} options.separators use customized separators
  * @returns {Promise}
  */
-module.exports = (html, markdown, to, options = {}) => {
+exports.compiler = (html, markdown, to, options = {}) => {
   let separators = _.defaults(options.separators, SEPARATORS);
   let encoding = options.encoding || 'UTF-8';
   return fs.readFile(markdown, encoding)
@@ -45,3 +45,5 @@ module.exports = (html, markdown, to, options = {}) => {
       return fs.writeFile(to, html, encoding);
     });
 };
+
+exports.toCDN = toCDN;
