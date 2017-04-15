@@ -6,16 +6,16 @@
  */
 
 const _ = require('lodash');
+const cheerio = require('cheerio');
 const fs = require('./fs');
 const render = require('./render');
-const toCDN = require('./toCDN');
+const {toCDNAll, toCDN} = require('./toCDN');
 
 const SEPARATORS = {
   page: '<!-- page -->',
   section: '<!-- section -->',
   fragment: '<!-- fragment -->'
 };
-const PATH_REG = /\.\/node_modules\/([\w.\-]+)\//g;
 
 /**
  *
@@ -40,9 +40,13 @@ exports.compiler = (html, markdown, to, options = {}) => {
         })
     })
     .then( (pages, html) => {
-      html = html.replace(PATH_REG, toCDN)
-        .replace(/<section[\S\s]+>\s+<\/section>/, pages.join(''));
-      return fs.writeFile(to, html, encoding);
+      let $ = cheerio.load(html, {
+        decodeEntities: false
+      });
+      $('script').attr('src', toCDNAll);
+      $('link[rel=stylesheet]').attr('href', toCDNAll);
+      $('section').replaceWith(pages.join(''));
+      return fs.writeFile(to, $.html(), encoding);
     });
 };
 
