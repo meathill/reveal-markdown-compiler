@@ -2,8 +2,7 @@
  * Created by realm on 2017/4/12.
  */
 
-const marked = require('marked');
-const renderer = require('./renderer');
+const marked = require('./marked');
 const cheerio = require('cheerio');
 
 module.exports = (content, separators) => {

@@ -24,4 +24,6 @@ renderer.image = function (href, title, text) {
   return `<img src="${href}" title="${title}" alt="${text}" ${attrs}>`;
 };
 
-module.exports = renderer;
+module.exports = markdown => {
+  return marked(markdown, {renderer: renderer});
+};

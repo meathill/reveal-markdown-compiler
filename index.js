@@ -9,6 +9,7 @@ const _ = require('lodash');
 const cheerio = require('cheerio');
 const fs = require('./fs');
 const render = require('./render');
+const shortCode = require('./shortcode');
 const {toCDNAll, toCDN} = require('./toCDN');
 
 const SEPARATORS = {
@@ -34,10 +35,13 @@ exports.compiler = (html, markdown, to, options = {}) => {
       return render(content, separators);
     })
     .then( pages => {
+      return shortCode(pages);
+    })
+    .then( pages => {
       return fs.readFile(html, encoding)
         .then( content => {
           return [pages, content];
-        })
+        });
     })
     .then( (pages, html) => {
       let $ = cheerio.load(html, {
