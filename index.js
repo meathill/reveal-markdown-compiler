@@ -31,11 +31,11 @@ exports.compiler = (html, markdown, to, options = {}) => {
   let separators = _.defaults(options.separators, SEPARATORS);
   let encoding = options.encoding || 'UTF-8';
   return fs.readFile(markdown, encoding)
-    .then( content => {
-      return render(content, separators);
-    })
     .then( pages => {
       return shortCode(pages);
+    })
+    .then( content => {
+      return render(content, separators);
     })
     .then( pages => {
       return fs.readFile(html, encoding)

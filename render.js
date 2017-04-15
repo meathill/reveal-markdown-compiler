@@ -13,11 +13,11 @@ module.exports = (content, separators) => {
       page = page.split('Note:')[0];
       let fragments = page.split(separators.fragment);
       if (fragments.length === 1) {
-        return '<section>' + marked(page, {renderer: renderer}) + '</section>';
+        return '<section>' + marked(page) + '</section>';
       }
 
       fragments = fragments.map( fragment => {
-        fragment = marked(fragment, {renderer: renderer});
+        fragment = marked(fragment);
         let $ = cheerio.load(fragment, {
           decodeEntities: false
         });

@@ -3,15 +3,18 @@
  */
 
 const fs = require('fs');
+const path = require('path');
 const marked = require('./marked');
-const partialRegExp = /{{> (\w+)}}/g;
+const partialRegExp = /{{> (\w+)}}/;
 
 module.exports = (content) => {
-  let matches = content.match(partialRegExp);
+  let reg = new RegExp(partialRegExp, 'g');
+  let matches = content.match(reg);
   return Promise.all(matches.map( match => {
+    match = match.match(partialRegExp);
     let key = match[1];
     return new Promise(resolve => {
-      fs.readFile('partials/' + key + '.md', 'utf8', (err, content) => {
+      fs.readFile(path.resolve(__dirname, 'partials/' + key + '.md'), 'utf8', (err, content) => {
         if (err) {
           throw err;
         }
