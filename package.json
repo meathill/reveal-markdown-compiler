@@ -1,5 +1,5 @@
 {
-  "name": "reveal-markdown-compiler",
+  "name": "meathill-reveal-markdown-compiler",
   "version": "1.0.1",
   "description": "a compiler convert markdown to reveal.js slide",
   "main": "index.js",
