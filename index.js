@@ -43,7 +43,7 @@ exports.compiler = (html, markdown, to, options = {}) => {
           return [pages, content];
         });
     })
-    .then( (pages, html) => {
+    .then( ([pages, html]) => {
       let $ = cheerio.load(html, {
         decodeEntities: false
       });

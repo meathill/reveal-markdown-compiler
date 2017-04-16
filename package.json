@@ -1,6 +1,6 @@
 {
   "name": "reveal-markdown-compiler",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "a compiler convert markdown to reveal.js slide",
   "main": "index.js",
   "scripts": {
