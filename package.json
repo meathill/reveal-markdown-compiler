@@ -1,6 +1,6 @@
 {
   "name": "reveal-markdown-compiler",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "a compiler convert markdown to reveal.js slide",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,12 @@
     "url": "git+https://github.com/meathill/reveal-markdown-compiler.git"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": {
+    "name": "Meathill",
+    "email": "meathill@gmail.com",
+    "url": "http://meathill.com"
+  },
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/meathill/reveal-markdown-compiler/issues"
   },
