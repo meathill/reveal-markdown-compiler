@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "cheerio": "^0.22.0",
+    "html-minifier": "^3.4.3",
     "lodash": "latest",
     "marked": "^0.3.6"
   }

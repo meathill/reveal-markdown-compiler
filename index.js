@@ -7,6 +7,7 @@
 
 const _ = require('lodash');
 const cheerio = require('cheerio');
+const minifier = require('html-minifier');
 const fs = require('./fs');
 const render = require('./render');
 const shortCode = require('./shortcode');
@@ -40,7 +41,7 @@ exports.compiler = (html, markdown, to, options = {}) => {
     .then( pages => {
       return fs.readFile(html, encoding)
         .then( content => {
-          return [pages, content];
+          return [pages.join(''), content];
         });
     })
     .then( ([pages, html]) => {
@@ -49,7 +50,13 @@ exports.compiler = (html, markdown, to, options = {}) => {
       });
       $('script').attr('src', toCDNAll);
       $('link[rel=stylesheet]').attr('href', toCDNAll);
-      $('section').replaceWith(pages.join(''));
+      pages = minifier(pages, {
+        collapseWhitespace: true,
+        removeComments: true,
+        removeEmptyAttributes: true,
+        removeEmptyElements: true
+      });
+      $('section').replaceWith(pages);
       return fs.writeFile(to, $.html(), encoding);
     });
 };
