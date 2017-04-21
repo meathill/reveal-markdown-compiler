@@ -5,5 +5,5 @@
   "marked": "//cdn.staticfile.org/marked/0.3.6/",
   "reveal.js": "//cdn.staticfile.org/reveal.js/3.4.1/",
   "highlight.js": "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.10.0/",
-  "meathill-reveal-theme": "//meathill.github.io/reveal-theme/"
+  "meathill-reveal-theme": "//meathill-lecture.github.io/box-flex-grid/"
 }

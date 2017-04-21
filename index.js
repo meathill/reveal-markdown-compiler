@@ -7,7 +7,7 @@
 
 const _ = require('lodash');
 const cheerio = require('cheerio');
-const minifier = require('html-minifier');
+const minify = require('html-minifier').minify;
 const fs = require('./fs');
 const render = require('./render');
 const shortCode = require('./shortcode');
@@ -50,7 +50,7 @@ exports.compiler = (html, markdown, to, options = {}) => {
       });
       $('script').attr('src', toCDNAll);
       $('link[rel=stylesheet]').attr('href', toCDNAll);
-      pages = minifier(pages, {
+      pages = minify(pages, {
         collapseWhitespace: true,
         removeComments: true,
         removeEmptyAttributes: true,

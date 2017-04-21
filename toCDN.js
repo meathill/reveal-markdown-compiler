@@ -7,7 +7,7 @@ const PATH_REG = /\.\/node_modules\/([\w.\-]+)\//;
 
 function toCDN(match, key) {
   return CDN[key];
-};
+}
 
 exports.toCDNAll = (i, src) => {
   if (!PATH_REG.test(src)) {
