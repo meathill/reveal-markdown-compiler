@@ -30,7 +30,7 @@ module.exports = (content) => {
       return map;
     })
     .then(partials => {
-      return content.replace(partialRegExp, (match, key) => {
+      return content.replace(reg, (match, key) => {
         return partials[key];
       });
     });
