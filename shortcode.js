@@ -14,7 +14,7 @@ module.exports = (content) => {
     match = match.match(partialRegExp);
     let key = match[1];
     return new Promise(resolve => {
-      fs.readFile(path.resolve(__dirname, 'partials/' + key + '.md'), 'utf8', (err, content) => {
+      fs.readFile(path.resolve(__dirname, 'partials/' + key + '.html'), 'utf8', (err, content) => {
         if (err) {
           throw err;
         }
