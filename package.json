@@ -1,6 +1,6 @@
 {
   "name": "reveal-markdown-compiler",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "a compiler convert markdown to reveal.js slide",
   "main": "index.js",
   "scripts": {
@@ -26,8 +26,8 @@
   },
   "dependencies": {
     "cheerio": "^0.22.0",
-    "html-minifier": "^3.5.2",
-    "lodash": "latest",
+    "html-minifier": "^3.5.5",
+    "lodash": "^4.17.4",
     "marked": "^0.3.6"
   }
 }
