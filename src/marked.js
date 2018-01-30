@@ -2,7 +2,7 @@
  * Created by realm on 2017/4/12.
  */
 
-const marked = require('marked');
+import marked from 'marked';
 
 let renderer = new marked.Renderer();
 let separator = ' | ';
@@ -24,6 +24,8 @@ renderer.image = function (href, title, text) {
   return `<img src="${href}" title="${title}" alt="${text}" ${attrs}>`;
 };
 
-module.exports = markdown => {
-  return marked(markdown, {renderer: renderer});
-};
+export default function(markdown) {
+  return marked(markdown, {
+    renderer: renderer,
+  });
+}

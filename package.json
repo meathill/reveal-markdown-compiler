@@ -1,8 +1,8 @@
 {
   "name": "reveal-markdown-compiler",
-  "version": "1.2.1",
+  "version": "2.0.0",
   "description": "a compiler convert markdown to reveal.js slide",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,11 +10,15 @@
     "type": "git",
     "url": "git+https://github.com/meathill/reveal-markdown-compiler.git"
   },
-  "keywords": [],
+  "keywords": [
+    "reveal.js",
+    "markdown compiler",
+    "SF live"
+  ],
   "author": {
     "name": "Meathill",
     "email": "meathill@gmail.com",
-    "url": "http://meathill.com"
+    "url": "https://meathill.com"
   },
   "license": "MIT",
   "bugs": {
@@ -22,12 +26,15 @@
   },
   "homepage": "https://github.com/meathill/reveal-markdown-compiler#readme",
   "devDependencies": {
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
     "gulp": "^3.9.1"
   },
   "dependencies": {
-    "cheerio": "^0.22.0",
-    "html-minifier": "^3.5.5",
+    "cheerio": "^1.0.0-rc.2",
+    "html-minifier": "^3.5.8",
     "lodash": "^4.17.4",
-    "marked": "^0.3.6"
+    "marked": "^0.3.12",
+    "pug": "^2.0.0-rc.4"
   }
 }
