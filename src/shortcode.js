@@ -12,7 +12,7 @@ const shortCodeMap = {};
 export default async function(content) {
   let reg = new RegExp(partialRegExp, 'g');
   let matches = content.match(reg);
-  for (let i = 0, len = matches.length; i ++; i < len) {
+  for (let i = 0, len = matches.length; i < len; i ++) {
     let match = matches[i].match(partialRegExp);
     let key = match[1];
     if (!shortCodeMap[key]) {

@@ -28,7 +28,7 @@ const SEPARATORS = {
  *    @param {Object} options.separators use customized separators
  * @returns {Promise}
  */
-export default async function(html, markdown, to, {encoding, separators = {}} = {}) {
+const compiler = async function (html, markdown, to, {encoding, separators = {}} = {}) {
   separators = defaults(separators, SEPARATORS);
   encoding = encoding || 'UTF-8';
   let pages = await readFile(markdown, encoding);
@@ -36,7 +36,7 @@ export default async function(html, markdown, to, {encoding, separators = {}} = 
   pages = render(pages, separators);
   let template = await readFile(html, encoding);
   let $ = cheerio.load(template, {
-    decodeEntities: false
+    decodeEntities: false,
   });
   $('script').attr('src', toCDNAll);
   $('link[rel=stylesheet]').attr('href', toCDNAll);
@@ -50,4 +50,7 @@ export default async function(html, markdown, to, {encoding, separators = {}} = 
   return writeFile(to, html, encoding);
 };
 
-exports.toCDN = toCDN;
+export {
+  compiler,
+  toCDN,
+};

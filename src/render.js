@@ -2,10 +2,10 @@
  * Created by realm on 2017/4/12.
  */
 
-const marked = require('./marked');
-const cheerio = require('cheerio');
+import marked from './marked';
+import cheerio from 'cheerio';
 
-module.exports = (content, separators) => {
+export default function (content, separators) {
   let pages = content.split(separators.page);
   return pages.map( page => {
     let pages = page.split(separators.section);

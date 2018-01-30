@@ -1,10 +1,11 @@
 {
   "name": "reveal-markdown-compiler",
   "version": "2.0.0",
-  "description": "a compiler convert markdown to reveal.js slide",
+  "description": "A compiler convert markdown to reveal.js slide",
   "main": "dist/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src --out-dir dist"
   },
   "repository": {
     "type": "git",
