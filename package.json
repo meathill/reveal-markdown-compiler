@@ -1,11 +1,12 @@
 {
   "name": "reveal-markdown-compiler",
-  "version": "2.0.0",
+  "version": "2.2.0",
   "description": "A compiler convert markdown to reveal.js slide",
-  "main": "dist/index.js",
+  "main": "dist/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src --out-dir dist"
+    "dev": "webpack --mode development",
+    "build": "webpack --mode production"
   },
   "repository": {
     "type": "git",
@@ -27,9 +28,12 @@
   },
   "homepage": "https://github.com/meathill/reveal-markdown-compiler#readme",
   "devDependencies": {
+    "babel-loader": "^7.1.4",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.1",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "webpack": "^4.5.0",
+    "webpack-cli": "^2.0.14"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
