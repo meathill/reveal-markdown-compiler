@@ -32,14 +32,14 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "gulp": "^4.0.0",
-    "webpack": "^4.5.0",
+    "webpack": "^4.29.3",
     "webpack-cli": "^2.0.14"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
-    "pug": "^2.0.3",
-    "html-minifier": "^3.5.19",
-    "lodash": "^4.17.10",
-    "marked": "^0.4.0"
+    "html-minifier": "^3.5.21",
+    "lodash": "^4.17.11",
+    "marked": "^0.6.0",
+    "pug": "^2.0.3"
   }
 }
