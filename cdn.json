@@ -1,9 +1,9 @@
 {
-  "bootstrap": "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/",
-  "jquery": "//cdn.staticfile.org/jquery/3.3.1/",
+  "bootstrap": "//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/",
+  "jquery": "//cdn.staticfile.org/jquery/3.4.1/",
   "font-awesome": "//cdn.staticfile.org/font-awesome/4.7.0/",
-  "marked": "//cdn.staticfile.org/marked/0.3.12/",
-  "reveal.js": "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.6.0/",
-  "highlight.js": "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/",
+  "marked": "//cdn.staticfile.org/marked/0.6.2/",
+  "reveal.js": "//cdnjs.cloudflare.com/ajax/libs/reveal.js/3.8.0/",
+  "highlight.js": "//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/",
   "meathill-reveal-theme": "http://static.meathill.com/reveal-theme/"
 }
