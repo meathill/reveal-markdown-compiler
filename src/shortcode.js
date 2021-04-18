@@ -2,12 +2,13 @@
  * Created by meathill on 2017/4/15.
  */
 
-import {readFile} from './fs';
+import {promises} from 'fs';
 import path from 'path';
 import pug from 'pug';
 
 const partialRegExp = /{{> (\w+)}}/;
 const shortCodeMap = {};
+const {readFile} = promises;
 
 export default async function(content) {
   let reg = new RegExp(partialRegExp, 'g');

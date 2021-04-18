@@ -5,13 +5,14 @@
  * Created by realm on 2017/4/12.
  */
 
-import {defaults} from 'lodash';
+import defaults from 'lodash/lodash';
 import cheerio from 'cheerio';
-import {minify} from 'html-minifier';
-import {readFile, writeFile} from './fs';
+import {promises} from 'fs';
 import render from './render';
 import shortCode from './shortcode';
 import {toCDNAll, toCDN} from './toCDN';
+
+const {readFile, writeFile} = promises;
 
 const SEPARATORS = {
   page: '<!-- page -->',
@@ -41,12 +42,6 @@ const compiler = async function (html, markdown, to, {encoding, separators = {}}
   $('script').attr('src', toCDNAll);
   $('link[rel=stylesheet]').attr('href', toCDNAll);
   $('section').replaceWith(pages.join(''));
-  html = minify($.html(), {
-    collapseWhitespace: true,
-    removeComments: true,
-    removeEmptyAttributes: true,
-    removeEmptyElements: true
-  });
   return writeFile(to, html, encoding);
 };
 

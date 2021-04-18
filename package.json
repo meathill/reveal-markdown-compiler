@@ -1,10 +1,9 @@
 {
   "name": "reveal-markdown-compiler",
-  "version": "2.2.6",
+  "version": "2.3.0",
   "description": "A compiler convert markdown to reveal.js slide",
   "main": "dist/main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack --mode development",
     "build": "webpack --mode production"
   },
@@ -31,15 +30,13 @@
     "@babel/core": "^7.11.6",
     "@babel/preset-env": "^7.11.5",
     "babel-loader": "^8.1.0",
-    "gulp": "^4.0.2",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^4.0.0"
+    "webpack": "^5.33.2",
+    "webpack-cli": "^4.6.0"
   },
   "dependencies": {
-    "cheerio": "^1.0.0-rc.3",
-    "html-minifier": "^4.0.0",
+    "cheerio": "^1.0.0-rc.6",
     "lodash": "^4.17.20",
-    "marked": "^1.2.0",
-    "pug": "^3.0.0"
+    "marked": "^2.0.3",
+    "pug": "^3.0.2"
   }
 }
